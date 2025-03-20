@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=0.8">
+        <title>Usługi - wavvocean.pl</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(135deg, #6b7280, #1f2937);
+                background-size: 200% 200%;
+                animation: gradientShift 15s ease infinite;
+                margin: 0;
+                width: 100%;
+            }
+
+            @keyframes gradientShift {
+                0% { background-position: 0% 0%; }
+                50% { background-position: 100% 100%; }
+                100% { background-position: 0% 0%; }
+            }
+
+            .header-blur {
+                backdrop-filter: blur(10px);
+                background: linear-gradient(to bottom, rgba(39, 39, 42, 0.8) 0%, rgba(39, 39, 42, 0) 100%);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .animate-fadeInUp {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+
+            .dropdown-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(39, 39, 42, 0.95);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                z-index: 50;
+            }
+
+            .dropdown-menu.active {
+                display: block;
+            }
+
+            @media (min-width: 768px) {
+                .dropdown-menu .menu-content {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 6rem 4rem;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .dropdown-menu .menu-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 4rem 2rem;
+                }
+
+                .desktop-nav {
+                    display: none;
+                }
+
+                .dropdown-menu .menu-section {
+                    margin-bottom: 3rem;
+                }
+
+                .dropdown-menu .menu-section:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-gradient-to-b from-zinc-950 to-zinc-800 text-white min-h-screen flex flex-col">
+        <header class="fixed top-0 left-0 w-full flex justify-between items-center p-6 z-50 header-blur">
+            <div>
+                <img src="files/photos/myniqq.jpg" alt="Logo" class="h-12">
+            </div>
+            <div class="desktop-nav hidden md:flex space-x-6">
+                <a href="portfolio.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Portfolio</span>
+                </a>
+                <a href="uslugi.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Usługi</span>
+                </a>
+                <a href="index.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-home"></i>
+                    <span>Strona Główna</span>
+                </a>
+                <a href="omnie.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-user"></i>
+                    <span>O mnie</span>
+                </a>
+                <a href="contact.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Kontakt</span>
+                </a>
+            </div>
+            <div>
+                <button id="hamburger-btn" class="text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <button id="close-btn" class="absolute top-6 right-6 text-2xl text-white focus:outline-none">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+                <div class="menu-content text-white">
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold">Zamów</h3>
+                        <a href="zamow-miks.html" class="block text-lg hover:text-zinc-400">Miks/mastering</a>
+                        <a href="zamow-beat.html" class="block text-lg hover:text-zinc-400">Beaty</a>
+                        <a href="zamow-tekst.html" class="block text-lg hover:text-zinc-400">Teksty</a>
+                        <a href="zamow-konsultacje.html" class="block text-lg hover:text-zinc-400">Konsultacje</a>
+                    </div>
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold">Usługi</h3>
+                        <a href="uslugi.html#mixmastering" class="block text-lg hover:text-zinc-400">Miks/mastering</a>
+                        <a href="uslugi.html#beat" class="block text-lg hover:text-zinc-400">Beaty</a>
+                        <a href="uslugi.html#teksty" class="block text-lg hover:text-zinc-400">Teksty</a>
+                        <a href="uslugi.html#konsultacje" class="block text-lg hover:text-zinc-400">Konsultacje</a>
+                    </div>
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold italic">wavvocean.pl</h3>
+                        <a href="index.html" class="block text-lg hover:text-zinc-400">Strona Główna</a>
+                        <a href="omnie.html" class="block text-lg hover:text-zinc-400">O mnie</a>
+                        <a href="portfolio.html" class="block text-lg hover:text-zinc-400">Portfolio</a>
+                        <a href="faq.html" class="block text-lg hover:text-zinc-400">FAQ</a>
+                        <a href="contact.html" class="block text-lg hover:text-zinc-400">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="mt-20 py-12 flex-1">
+            <br><br><br><br>
+            <section class="text-6xl font-bold justify-center text-center mb-12">
+                <h1>Usługi</h1>
+            </section>
+            <div class="max-w-5xl mx-auto px-6">
+                <section id="mixmastering" class="mb-12">
+                    <br><br><br>
+                    <br><br><br>
+                    <h2 class="text-3xl font-bold mb-4">Miks/mastering</h2>
+                    <p class="text-zinc-400 mb-4">Twój utwór zasługuje na profesjonalne brzmienie. Oferuję miks i mastering na najwyższym poziomie, dostosowany do Twojego stylu. Wykorzystuję zaawansowane techniki i analogowe emulacje. Gwarantuję klarowność i moc, które wyróżnią Twoją muzykę. Gotowy, by zabrzmieć jak topowe produkcje?</p>
+                    <button class="text-zinc-400 hover:text-zinc-300 mb-4 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">Dowiedz się więcej</button>
+                    <div class="hidden bg-zinc-900/80 p-6 rounded-lg">
+                        <p class="text-zinc-400 mb-4">Specjalizuję się w miksie i masteringu dla różnych gatunków - od hip-hopu po pop i elektronikę. Każdy utwór traktuję indywidualnie, dbając o balans, dynamikę i głębię dźwięku. Pracuję na profesjonalnym sprzęcie i oprogramowaniu, takim jak FL Studio, Reaper, Universal Audio i Slate Digital. W cenniku znajdziesz 3 opcje z cenami podanymi za jeden utwór. W przypadku zlecenia na 3 lub więcej utworów, prosimy o kontakt poprzez Instagram lub e-mail.</p>
+                        <h3 class="text-xl font-semibold mb-2">Cennik:</h3>
+                        <ul class="text-zinc-400 list-disc list-inside mb-4">
+                            <li>Miks/mastering (instrumental w jednej ścieżce, do 10 ścieżek wokalu): <b>80zł</b></li>
+                            <li>Mix/mastering PRO (instrumental do 10 śladów, do 15 ścieżek wokalu): <b>120zł</b></li>
+                            <li>Mix/mastering UNLIMITED (bez limitu ścieżek instrumentala i wokalu): <b>160zł</b></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <a href="zamow-miks.html" class="bg-zinc-700 hover:bg-zinc-600 text-white py-2 px-4 rounded inline-block">Zamów teraz</a>
+                </section>
+
+                <section id="beat" class="mb-12">
+                    <h2 class=" text-3xl font-bold mb-4">Produkcja instrumentala</h2>
+                    <p class="text-zinc-400 mb-4">Tworzę unikalne podkłady, które idealnie pasują do Twojego stylu. Od trapu po drill i chillout - każdy beat jest autorski/ Zero gotowych loopów, tylko oryginalna produkcja. Chcesz wyróżnić się na scenie? Zamów beat, który zrobi różnicę!</p>
+                    <button class="text-zinc-400 hover:text-zinc-300 mb-4 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">Dowiedz się więcej</button>
+                    <div class="hidden bg-zinc-900/80 p-6 rounded-lg">
+                        <p class="text-zinc-400 mb-4">Projektuję beaty od podstaw, korzystając z syntezatorów, sampli i perkusji dopasowanej do Twojej wizji. Mogę stworzyć coś agresywnego, melancholijnego lub eksperymentalnego - Ty decydujesz. Współprację z artystami, by każdy podkład był spersonalizowany. Oferuję też możliwość dodania aranżacji lub wokali referencyjnych. W cenniku znajdziesz tylko przedział cenowy, w którym gwarantujemy, że się zmieścimy. Po dokładniejszą wycenę prosimy o kontakt poprzez Instagram lub e-mail.</p>
+                        <h3 class="text-xl font-semibold mb-2">Cennik</h3>
+                        <ul class="text-zinc-400 list-disc list-inside mb-4">
+                            <li>Produkcja instrumentala: <b>100-200zł</b></li>
+                        </ul>
+                    </div>
+                    <br>
+                    <a href="zamow-beat.html" class="bg-zinc-700 hover:bg-zinc-600 text-white py-2 px-4 rounded inline-block">Zamów teraz</a>
+                </section>
+
+                <section id="teksty" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Teksty</h2>
+                    <p class="text-zinc-400 mb-4">Brakuje Ci słów? Piszę teksty, które mają moc i emocje. Dopasuję je do Twojego stylu i przekazu. Od chwytliwych refrenów po głębokie wersy - wszystko, czego potrzebujesz. Spraw, by Twoja muzyka zapadła w pamięć!</p>
+                    <button class="text-zinc-400 hover:text-zinc-300 mb-4 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">Dowiedz się więcej</button>
+                    <div class="hidden bg-zinc-900/80 p-6 rounded-lg">
+                        <p class="text-zinc-400 mb-4">Tworzę teksty na zamówienie - od storytellingu po punchline'y i poetyckie linie. Współpracuję z Tobą, by oddać Twój charakter i intencje. Mogę napisać pełny utwór, refren lub poprawić istniejący tekst. Pracuję szybko, a Ty masz pełną kontrolę nad efektem końcowym. W cenniku są podane zakresy cenowe, wszystko jest zależne od trudności zlecenia.</p>
+                        <h3 class="text-xl font-semibold mb-2">Cennik</h3>
+                        <ul class="text-zinc-400 list-disc list-inside mb-4">
+                            <li>Refren: <b>60-80zł</b></li>
+                            <li>Pełny utwór (refren i 16 wersów): <b>150-200zł</b></li>
+                            <li>Każda kolejna zwrotka (16 wersów): <b>60zł</b></li>
+                        </ul>
+                        <p class="text-zinc-400 mb-4">W przypadku specyficznego rodzaju zlecenia lub większej ilości utworów, prosimy o kontakt poprzez Instagram lub e-mail.</e-mail></p>
+                    </div>
+                    <br>
+                    <a href="zamow-tekst.html" class="bg-zinc-700 hover:bg-zinc-600 text-white py-2 px-4 rounded inline-block">Zamów teraz</a>
+                </section>
+
+                <section id="konsultacje" class="mb-12">
+                    <h2 class="text-3xl font-bold mb-4">Konsultacje</h2>
+                    <p class="text-zinc-400 mb-4">Chcesz poprawić swoje produkcje? Oferuję konsultacje, które pomogą Ci dopracować wokal, miks czy aranżację. Dzielę się wiedzą i praktycznymi wskazówkami. Razem podniesiemy Twój poziom. Gotowy na rozwój?</p>
+                    <button class="text-zinc-400 hover:text-zinc-300 mb-4 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">Dowiedz się więcej</button>
+                    <div class="hidden bg-zinc-900/80 p-6 rounded-lg">
+                        <p class="text-zinc-400 mb-4">Podczas konsultacji analizuję Twój utwór i wskazuj, co można poprawić - od EQ po kompresję i strukturę. Sesje odbywają się online na platformie Discord lub Zoom. Oferuję jednorazowe spotkania lub pakiety dla dłuższej współpracy. Sprawdź szczegóły poniżej!</p>
+                        <h3 class="texi-xl font-semibold mb-2">Cennik</h3>
+                        <ul class="text-zinc-400 list-disc list-inside mb-4">
+                            <li>1 godzina: <b>90zł</b></li>
+                            <li>Pakiet 3 godzin: <b>250zł</b></li>
+                        </ul>
+                        <p class="text-zinc-400 mb-4">W razie potrzeby większej ilości godzin konsultacji, prosimy o kontakt poprzez Instagram lub e-mail.</p>
+                    </div>
+                    <br>
+                    <a href="zamow-konsultacje.html" class="bg-zinc-700 hover:bg-zinc-600 text-white py-2 px-4 rounded inline-block">Zamów teraz</a>
+                </section>
+            </div>
+        </main>
+
+        <footer class="bg-zinc-900.80 py-12">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4">NA SKRÓTY</h3>
+                    <ul class="space-y-2 text-center">
+                        <li><a href="index.html" class="text-zinc-400 hover:text-zinc-300">Strona Główna</a></li>
+                        <li><a href="portfolio.html" class="text-zinc-400 hover:text-zinc-300">Portfolio</a></li>
+                        <li><a href="uslugi.html" class="text-zinc-400 hover:text-zinc-300">Usługi</a></li>
+                        <li><a href="omnie.html" class="text-zinc-400 hover:text-zinc-300">O mnie</a></li>
+                        <li><a href="contact.html" class="text-zinc-400 hover:text-zinc-300">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4">SOCIAL MEDIA</h3>
+                    <ul class="space-y-2 text-center">
+                        <li><a href="https://instagram.com/wavvocean/" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-centerspace-x-2"><i class="fa-brands fa-instagram"></i><span> Instagram</span></a></li>
+                        <li><a href="https://www.youtube.com/@wavvocean" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a></li>
+                        <li><a href="https://www.youtube.com/@wavvoceanbeat" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-youtube"></i><span>Type Beats</span></a></li>
+                        <li><a href="https://open.spotify.com/artist/1xqy52NW8VhneLK97zHt2A?si=TESNe_-ESuWcagUrwVIXsg" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-spotify"></i><span>Spotify</span></a></li>
+                        <li><a href="https://music.apple.com/us/artist/wavvocean/1598320228" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-apple"></i><span>Apple Music</span></a></li>
+                        <li><a href="https://x.com/wavvocean" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-x-twitter"></i><span>X/Twitter</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8 text-zinc-400">
+                <p>© 2025 <i>wavvocean</i>. Wszelkie prawa zastrzeżone</p>
+            </div>
+        </footer>
+        <script>
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            hamburgerBtn.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                dropdownMenu.classList.remove('active');
+            });
+
+            dropdownMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('active');
+                });
+            });
+        </script>
+    </body>
+</html>

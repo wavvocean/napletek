@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=0.8">
+        <title>Strona główna - wavvocean.pl</title>
+        <meta name="description" content="Miejsce w którym znajdziesz profesjonalnie brzmiące miksy, beaty i teksty. Nie wierzysz? Sprawdź!">
+        <meta name="keywords" content="mix, mastering, mixmaster, beat, beaty, ghostwriting, produkcja muzyczna, studio szczecin, wavvocean"
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(135deg, #6b7280, #1f2937);
+                background-size: 200% 200%;
+                animation: gradientShift 15s ease infinite;
+                margin: 0;
+                width: 100%;
+            }
+
+            @keyframes gradientShift {
+                0% { background-position: 0% 0%; }
+                50% { background-position: 100% 100%; }
+                100% { background-position: 0% 0%; }
+            }
+
+            .header-blur {
+                backdrop-filter: blur(10px);
+                background: linear-gradient(to bottom, rgba(39, 39, 42, 0.8) 0%, rgba(39, 39, 42, 0) 100%);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .animate-fadeInUp {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+
+            .dropdown-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(39, 39, 42, 0.9);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                z-index: 50;
+                transform: translateY(-100%);
+                transition: transform 0.4s ease-in-out;
+            }
+
+            .dropdown-menu.active {
+                transform: translateY(0);
+            }
+
+            #hamburger-btn i {
+                transition: transform 0.3s ease-in-out;
+            }
+
+            #hamburger-btn.active i {
+                transform: rotate(90deg);
+            }
+
+            @media (min-width: 768px) {
+                .dropdown-menu .menu-content {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 6rem 4rem;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .dropdown-menu .menu-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 4rem 2rem;
+                }
+
+                .desktop-nav {
+                    display: none;
+                }
+
+                .dropdown-menu .menu-section {
+                    margin-bottom: 3rem;
+                }
+
+                .dropdown-menu .menu-section:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-gradient-to-b from-zinc-950 to-zinc-800 text-white min-h-screen flex flex-col">
+        <header class="fixed top-0 left-0 w-full flex justify-between items-center p-6 z-50 header-blur">
+            <div>
+                <img src="files/photos/myniqq.jpg" alt="Logo" class="h-12">
+            </div>
+            <div class="desktop-nav hidden md:flex space-x-6">
+                <a href="portfolio.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Portfolio</span>
+                </a>
+                <a href="uslugi.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Usługi</span>
+                </a>
+                <a href="index.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-home"></i>
+                    <span>Strona Główna</span>
+                </a>
+                <a href="omnie.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-user"></i>
+                    <span>O mnie</span>
+                </a>
+                <a href="contact.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Kontakt</span>
+                </a>
+            </div>
+            <div>
+                <button id="hamburger-btn" class="text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <div class="menu-content text-white">
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold">Zamów</h3>
+                        <a href="zamow-miks.html" class="block text-lg hover:text-zinc-400">Miks/mastering</a>
+                        <a href="zamow-beat.html" class="block text-lg hover:text-zinc-400">Beaty</a>
+                        <a href="zamow-tekst.html" class="block text-lg hover:text-zinc-400">Teksty</a>
+                        <a href="zamow-konsultacje.html" class="block text-lg hover:text-zinc-400">Konsultacje</a>
+                    </div>
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold">Usługi</h3>
+                        <a href="uslugi.html#mixmastering" class="block text-lg hover:text-zinc-400">Miks/mastering</a>
+                        <a href="uslugi.html#beat" class="block text-lg hover:text-zinc-400">Beaty</a>
+                        <a href="uslugi.html#teksty" class="block text-lg hover:text-zinc-400">Teksty</a>
+                        <a href="uslugi.html#konsultacje" class="block text-lg hover:text-zinc-400">Konsultacje</a>
+                    </div>
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold italic">wavvocean.pl</h3>
+                        <a href="index.html" class="block text-lg hover:text-zinc-400">Strona Główna</a>
+                        <a href="omnie.html" class="block text-lg hover:text-zinc-400">O mnie</a>
+                        <a href="portfolio.html" class="block text-lg hover:text-zinc-400">Portfolio</a>
+                        <a href="faq.html" class="block text-lg hover:text-zinc-400">FAQ</a>
+                        <a href="contact.html" class="block text-lg hover:text-zinc-400">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="relative h-[60vh] flex items-center justify-center -z-10 mt-20">
+            <video class="absolute inset-0 w-full h-full object-cover brightness-50" autoplay loop muted playsinline>
+                <source src="files/videos/122737-726192556_small.mp4" type="video/mp4">
+            </video>
+            <div class="relative z-10 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Twój dźwięk, moja pasja</h1>
+            </div>
+        </section>
+
+
+        
+        <section class="py-12 text-center animate-fadeInUp animation-delay-2000">
+            <p class="max-w-2xl mx-auto">Cześć! Jestem pasjonatem muzyki i tworzenia unikalnego brzmienia. Pomagam artystom osiągać ich wizje dzięki miksom i masteringom.</p>
+            <a href="omnie.html" class="text-zinc-400 hover:text-zinc-300 mt-4 inline-block">Dowiedz się więcej</a>
+        </section>
+
+        <section class="py-12 animate-fadeInUp">
+            <div id="auto-play" class="relative w-full">
+                <div class="carousel h-160 overflow-hidden">
+                    <div class="carousel-body flex transition-transform duration-500 ease-in-out">
+                        <div class="carousel-slide flex-none w-full bg-zinc-900/60 flex h-full justify-center p-6">
+                            <div class="text-center self-center">
+                                <h3 class="text-xl font-semibold">Miks/mastering</h3>
+                                <p class="text-zinc-400 mt-2">Profesjonalne wykończenie <b>Twoich</b> utworów.</p>
+                                <div class="mt-4 flex flex-col space-y-2">
+                                    <a href="uslugi.html#mixmastering" class="text-zinc-400 hover:text-zinc-300">Dowiedz się więcej</a>
+                                    <a href="zamow-miks.html" class="bg-zinc-700 hover:bg-zinc-600 text-white py-1 px-3 rounded">Zamów teraz</a>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="carousel-slide flex-none w-full bg-zinc-800/80 flex h-full justify-center p-6">
+                                <div class="text-center self-center">
+                                    <h3 class="text-xl font-semibold">Konsultacje</h3>
+                                    <p class="text-zinc-400 mt-2">Porady dla <b>Twoich</b> produkcji.</p>
+                                    <div class="mt-4 flex flex-col space-y-2">
+                                        <a href="uslugi.html#konsultacje" class="text-zinc-400 hover:text-zinc-300">Dowiedz się więcej</a>
+                                        <a href="zamow-konsultacje.html" class="bg-zinc-700 hover:bg-zinc-600 text-white py-1 px-3 rounded">Umów teraz</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-slide flex-none w-full bg-zinc-900 flex h-full justify-center p-6">
+                                <div class="text-center self-center">
+                                    <h3 class="text-xl font-semibold">Beaty na zamówienie</h3>
+                                    <p class="text-zinc-400 mt-2">Unikalne beaty dla <b>Twoich</b> projektów.</p>
+                                    <div class="mt-4 flex flex-col space-y-2">
+                                        <a href="uslugi.html#beat" class="text-zinc-400 hover:text-zinc-300">Dowiedz się więcej</a>
+                                        <a href="zamow-beat.html" class="bg-zinc-700 hover:bg-zinc-600 text-white py-1 px-3 rounded">Zamów teraz</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2">
+                        <span class="w-10 h-10 bg-zinc-700 flex items-center justify-center rounded-full shadow hover:bg-zinc-600">
+                            <i class="fa-solid fa-chevron-left text-white"></i>
+                        </span>
+                        <span class="sr-only">Poprzedni</span>
+                    </button>
+                    <button type="button" class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2">
+                        <span class="w-10 h-10 bg-zinc-700 flex items-center justify-center rounded-full shadow hover:bg-zinc-600">
+                            <i class="fa-solid fa-chevron-right text-white"></i>
+                        </span>
+                        <span class="sr-only">Następny</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 bg-zinc-900/50">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <h3 class="text-4xl font-bold">40+</h3>
+                    <p class="text-zinc-400">Zrealizowanych projektów</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold">15+</h3>
+                    <p class="text-zinc-400">Zadowolonych klientów</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold">750+</h3>
+                    <p class="text-zinc-400">Godzin w samym 2025 roku</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-zinc-300 py-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl text-zinc-800 font-bold">Moje ostatnie realizacje</h2>
+                    <p class="text-zinc-700 mt-2">Sprawdź powody dla których warto ze mną pracować</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 space-y-4">
+                    <div class="relative group">
+                        <div class="relative">
+                            <img src="https://t2.genius.com/unsafe/411x0/https%3A%2F%2Fimages.genius.com%2F529d64677ed08e05b8e79eadac4e6243.1000x1000x1.jpg" alt="ChokeMeJanek - YOUNG VAMPIRE LIFE" class="w-full h-full object-cover rounded-lg transition duration-300 group-hover:blur-sm">
+                            <div class="absolute top-0 left-0 -mt-8 -ml-4 bg-zinc-400/80 p-2 rounded">
+                                <p class="text-zinc-900 text-sm font-semibold">ChokeMeJanek</p>
+                                <p class="text-zinc-700 text-sm">Young Vampire Life</p>
+                            </div>
+                            <div class="absolute -bottom-10 -right-5 mb-2 mr-2 bg-zinc-400/80 p-2 rounded">
+                                <button class="text-zinc-700 text-sm hover:text-zinc-800 focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden');">Produkcja albumu/mix/mastering</button>
+                                <div class="hidden absolute bottom-10 right-0 bg-zinc-900/80 p-4 rounded-lg text-left w-80 z-10">
+                                    <p class="text-zinc-400 text-sm">1. OFFWHITE - Beat/mix/mastering/realizacja wokali</p>
+                                    <p class="text-zinc-400 text-sm">2. BREX! - Beat/mix/mastering</p>
+                                    <p class="text-zinc-400 text-sm">3. YVL feat. Kejsi - Beat/mix/mastering</p>
+                                    <p class="text-zinc-400 text-sm">4. GWIAZDY - Beat/mix/mastering/realizacja wokali</p>
+                                    <p class="text-zinc-400 text-sm">5. MŁODY GEEK by wavvocean - Beat/mix/mastering/realizacja wokali</p>
+                                    <p class="text-zinc-400 text-sm">6. DERZAI - Beat/mix/mastering</p>
+                                    <p class="text-zinc-400 text-sm">7. FREESTYLE 1 - Beat/mix/mastering</p>
+                                    <p class="text-zinc-400 text-sm">8. ROCKUJE CONVERSE W PRADZE feat. Kejsi - Beat/mix/mastering</p>
+                                    <p class="text-zinc-400 text-sm">9. FOREIGN - Beat/mix/mastering</p>
+                                    <p class="text-zinc-400 text-sm">10. NEWROCK - Beat/mix/mastering/realizacja wokali</p>
+                                    <p class="text-zinc-400 text-sm">11. TOXICCC - Beat/mix/mastering/realizacja wokali</p>
+                                    <p class="text-zinc-400 text-sm">12. SŁOWIANIN - Beat/mix/mastering</p>
+                                    <p class="text-zinc-400 text-sm">13. SERIO BOLI - Beat/mix/mastering</p>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://youtu.be/jVYMbcl8Cqo?si=1Iq9kcCV2By6YX1W" class="text-white mx-2 hover:text-zinc-300" target="_blank">
+                                    <i class="fa-brands fa-youtube text-5xl"></i>
+                                </a>
+                                <a href="https://open.spotify.com/album/1sJhWHynXdQUKZbgHxA8Ka?si=SAx8vc_XQMu1o5oSZp8L9A" class="text-white mx-2 hover:text-zinc-300" target="_blank">
+                                    <i class="fa-brands fa-spotify text-5xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <div class="relative">
+                            <img src="https://t2.genius.com/unsafe/203x203/https%3A%2F%2Fimages.genius.com%2F8de4f0d78899482227a7c5a6abba2951.1000x1000x1.jpg" alt="Wavvocean - SAFETY" class="w-full h-full object-cover rounded-lg transition duration-300 group-hover:blur-sm">
+                            <div class="absolute top-0 left-0 -mt-8 -ml-4 bg-zinc-400/80 p-2 rounded">
+                                <p class="text-zinc-900 text-sm font-semibold">Wavvocean</p>
+                                <p class="text-zinc-700 text-sm">SAFETY</p>
+                            </div>
+                            <div class="absolute -bottom-10 -right-5 mb-2 mr-2 bg-zinc-400/80 p-2 rounded">
+                                <p class="text-zinc-700 text-sm">Beat/mix/mastering/realizacja wokali</p>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://youtu.be/UxSYST_EBGM?si=TbU4lwoYgRDCepgR" class="text-white mx-2 hover:text-zinc-300" target="_blank">
+                                    <i class="fa-brands fa-youtube text-5xl"></i>
+                                </a>
+                                <a href="https://open.spotify.com/album/2ElOryISdObUT4tV8PrbtR?si=ymYvRi5hTuGvQg9-6K2AUw" class="text-white mx-2 hover:text-zinc-300" target="_blank">
+                                    <i class="fa-brands fa-spotify text-5xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-zinc-300 py-12">
+            <div class="max-w-7xl mx-auto grid px-6">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl text-zinc-800 font-bold">Dlaczego warto ze mną pracować?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-zinc-400/80 p-6 rounded-lg text-center flex flex-col justify-center h-64">
+                        <h3 class="text-xl text-zinc-800 font-semibold mb-2">Brzmienie na poziomie topowych produkcji</h3>
+                        <p class="text-zinc-700">Twój miks i mastering zabrzmią tak dobrze, jak utwory największych gwiazd. Wykorzystuję profesjonalne techniki i analogowe emulacje, by wydobyć pełnię mocy z Twojej muzyki.</p>
+                    </div>
+                    <div class="bg-zinc-400/80 p-6 rounded-lg text-center flex flex-col justify-center h-64">
+                        <h3 class="text-xl text-zinc-800 font-semibold mb-2">Beaty, które robią różnicę</h3>
+                        <p class="text-zinc-700">Tworzę unikalne podkłady dopasowane do Twojego stylu, niezależnie czy to trap, drill czy coś zupełnie nowego. Zero stockowych loopow, tylko autorska jakość!</p>
+                    </div>
+                    <div class="bg-zinc-400/80 p-6 rounded-lg text-center flex flex-col justify-center h-64">
+                        <h3 class="text-xl text-zinc-800 font-semibold mb-2">Teksty, które mają moc</h3>
+                        <p class="text-zinc-700">Brakuje Ci pomysłu na wersy? Pomogę stworzyć teksty, które angażują i zostają w głowie. Twój przekaz nabierze autentyczności i emoji, które przyciągną słuchaczy</p>
+                    </div>
+                    <div class="bg-zinc-400/80 p-6 rounded-lg text-center flex flex-col justify-center h-64">
+                        <h3 class="text-xl text-zinc-800 font-semibold mb-2">Konsultacje, które rozwijają</h3>
+                        <p class="text-zinc-700">Chcesz brzmieć lepiej? Pomogę Ci w dopracowaniu wokali, kompozycji i miksu, dzięki czemu Twój poziom produkcji wzrośnie szybciej, niż myślisz</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-zinc-900.80 py-12">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4">NA SKRÓTY</h3>
+                    <ul class="space-y-2 text-center">
+                        <li><a href="index.html" class="text-zinc-400 hover:text-zinc-300">Strona Główna</a></li>
+                        <li><a href="portfolio.html" class="text-zinc-400 hover:text-zinc-300">Portfolio</a></li>
+                        <li><a href="uslugi.html" class="text-zinc-400 hover:text-zinc-300">Usługi</a></li>
+                        <li><a href="omnie.html" class="text-zinc-400 hover:text-zinc-300">O mnie</a></li>
+                        <li><a href="contact.html" class="text-zinc-400 hover:text-zinc-300">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4">SOCIAL MEDIA</h3>
+                    <ul class="space-y-2 text-center">
+                        <li><a href="https://instagram.com/wavvocean/" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-centerspace-x-2"><i class="fa-brands fa-instagram"></i><span> Instagram</span></a></li>
+                        <li><a href="https://www.youtube.com/@wavvocean" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a></li>
+                        <li><a href="https://www.youtube.com/@wavvoceanbeat" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-youtube"></i><span>Type Beats</span></a></li>
+                        <li><a href="https://open.spotify.com/artist/1xqy52NW8VhneLK97zHt2A?si=TESNe_-ESuWcagUrwVIXsg" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-spotify"></i><span>Spotify</span></a></li>
+                        <li><a href="https://music.apple.com/us/artist/wavvocean/1598320228" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-apple"></i><span>Apple Music</span></a></li>
+                        <li><a href="https://x.com/wavvocean" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-x-twitter"></i><span>X/Twitter</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8 text-zinc-400">
+                <p>© 2025 <i>wavvocean</i>. Wszelkie prawa zastrzeżone</p>
+            </div>
+        </footer>
+
+
+        <script>
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const hamburgerIcon = hamburgerBtn.querySelector('i');
+
+            hamburgerBtn.addEventListener('click', () => {
+                const isActive = dropdownMenu.classList.contains('active');
+                dropdownMenu.classList.toggle('active');
+                hamburgerBtn.classList.toggle('active');
+
+                if (isActive) {
+                    hamburgerIcon.classList.remove('fa-times');
+                    hamburgerIcon.classList.add('fa-bars');
+                } else {
+                    hamburgerIcon.classList.remove('fa-bars');
+                    hamburgerIcon.classList.add('fa-times');
+                }
+            });
+
+            dropdownMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('active');
+                    hamburgerBtn.classList.remove('active');
+                    hamburgerIcon.classList.remove('fa-times');
+                    hamburgerIcon.classList.add('fa-bars');
+                });
+            });
+
+            // Logika karuzeli
+            const carouselBody = document.querySelector('.carousel-body');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+    
+            function updateCarousel() {
+                const slideWidth = slides[0].offsetWidth;
+                carouselBody.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+    
+            // Automatyczne przewijanie
+            function autoPlay() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }
+    
+            let autoPlayInterval = setInterval(autoPlay, 5000); // Zmiana co 5 sekund
+    
+            // Przyciski nawigacyjne
+            nextBtn.addEventListener('click', () => {
+                clearInterval(autoPlayInterval); // Zatrzymaj autoplay po kliknięciu
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+                autoPlayInterval = setInterval(autoPlay, 5000); // Wznów autoplay
+            });
+    
+            prevBtn.addEventListener('click', () => {
+                clearInterval(autoPlayInterval); // Zatrzymaj autoplay po kliknięciu
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+                autoPlayInterval = setInterval(autoPlay, 5000); // Wznów autoplay
+            });
+    
+            // Początkowe ustawienie
+            updateCarousel();
+        </script>
+    </body>
+</html>

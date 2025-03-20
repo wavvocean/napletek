@@ -1,0 +1,229 @@
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"  content="width=device-width, initial-scale=0.8">
+        <title>Umów konsultacje - wavvocean.pl</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                background: linear-gradient(135deg, #6b7280, #1f2937);
+                background-size: 200% 200%;
+                animation: gradientShift 15s ease infinite;
+                margin: 0;
+                width: 100%;
+            }
+
+            @keyframes gradientShift {
+                0% { background-position: 0% 0%; }
+                50% { background-position: 100% 100%; }
+                100% { background-position: 0% 0%; }
+            }
+
+            .header-blur {
+                backdrop-filter: blur(10px);
+                background: linear-gradient(to bottom, rgba(39, 39, 42, 0.8) 0%, rgba(39, 39, 42, 0) 100%);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+
+            .animate-fadeInUp {
+                animation: fadeInUp 0.8s ease-out forwards;
+            }
+
+            .dropdown-menu {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(39, 39, 42, 0.95);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                z-index: 50;
+            }
+
+            .dropdown-menu.active {
+                display: block;
+            }
+
+            @media (min-width: 768px) {
+                .dropdown-menu .menu-content {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 6rem 4rem;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .dropdown-menu .menu-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 4rem 2rem;
+                }
+
+                .desktop-nav {
+                    display: none;
+                }
+
+                .dropdown-menu .menu-section {
+                    margin-bottom: 3rem;
+                }
+
+                .dropdown-menu .menu-section:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-gradient-to-b from-zinc-950 to-zinc-800 text-white min-h-screen flex flex-col">
+        <header class="fixed top-0 left-0 w-full flex justify-between items-center p-6 z-50 header-blur">
+            <div>
+                <img src="files/photos/myniqq.jpg" alt="Logo" class="h-12">
+            </div>
+            <div class="desktop-nav hidden md:flex space-x-6">
+                <a href="portfolio.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Portfolio</span>
+                </a>
+                <a href="uslugi.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Usługi</span>
+                </a>
+                <a href="index.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-home"></i>
+                    <span>Strona Główna</span>
+                </a>
+                <a href="omnie.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-user"></i>
+                    <span>O mnie</span>
+                </a>
+                <a href="contact.html" class="hover:text-zinc-400">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Kontakt</span>
+                </a>
+            </div>
+            <div>
+                <button id="hamburger-btn" class="text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div id="dropdown-menu" class="dropdown-menu">
+                <button id="close-btn" class="absolute top-6 right-6 text-2xl text-white focus:outline-none">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+                <div class="menu-content text-white">
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold">Zamów</h3>
+                        <a href="zamow-miks.html" class="block text-lg hover:text-zinc-400">Miks/mastering</a>
+                        <a href="zamow-beat.html" class="block text-lg hover:text-zinc-400">Beaty</a>
+                        <a href="zamow-tekst.html" class="block text-lg hover:text-zinc-400">Teksty</a>
+                        <a href="zamow-konsultacje.html" class="block text-lg hover:text-zinc-400">Konsultacje</a>
+                    </div>
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold">Usługi</h3>
+                        <a href="uslugi.html#mixmastering" class="block text-lg hover:text-zinc-400">Miks/mastering</a>
+                        <a href="uslugi.html#beat" class="block text-lg hover:text-zinc-400">Beaty</a>
+                        <a href="uslugi.html#teksty" class="block text-lg hover:text-zinc-400">Teksty</a>
+                        <a href="uslugi.html#konsultacje" class="block text-lg hover:text-zinc-400">Konsultacje</a>
+                    </div>
+                    <div class="menu-section space-y-4">
+                        <h3 class="text-2xl font-bold italic">wavvocean.pl</h3>
+                        <a href="index.html" class="block text-lg hover:text-zinc-400">Strona Główna</a>
+                        <a href="omnie.html" class="block text-lg hover:text-zinc-400">O mnie</a>
+                        <a href="portfolio.html" class="block text-lg hover:text-zinc-400">Portfolio</a>
+                        <a href="faq.html" class="block text-lg hover:text-zinc-400">FAQ</a>
+                        <a href="contact.html" class="block text-lg hover:text-zinc-400">Kontakt</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="mt-20 py-12 flex-1">
+            <div class="max-w-xl mx-auto">
+                <h1 class="text-3xl font-bold mb-6 text-center">Umów konsultacje</h1>
+                <form action="https://formspree.io/f/mjkykwab" method="post" class="bg-zinc-900/80 p-6 rounded-lg">
+                    <div class="mb-4">
+                        <label for="name" class="block text-zinc-400">Imię</label>
+                        <input type="text" id="name" name="name" class="w-full p-2 mt-1 bg-zinc-800 rounded text-white" placeholder="Twoje imię" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-zinc-400">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-2 mt-1 bg-zinc-800 rounded text-white" placeholder="Twój email" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="goal" class="block text-zinc-400">Cel konsultacji</label>
+                        <input type="text" id="goal" name="goal" class="w-full p-2 mt-1 bg-zinc-800 rounded text-white" placeholder="Np. poprawa miksu, wokal" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="file" class="block text-zinc-400">Plik do analizy (link, opcjonalne)</label>
+                        <input type="url" id="file" name="file" class="w-full p-2 mt-1 bg-zinc-800 rounded text-white" placeholder="Np. Dropbox, Google Drive">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-zinc-400">Dodatkowe uwagi</label>
+                        <textarea id="message" name="message" class="w-full p-2 mt-1 bg-zinc-800 rounded text-white" rows="4" placeholder="Co chciałbyś omówić?" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-zinc-700 hover:bg-zinc-600 text-white py-2 px-4 rounded w-full">Umów</button>
+                </form>
+                <p class="text-zinc-400 text-center mt-4">Po złożeniu zamówienia skontaktuję się z Tobą w ciągu 24 godzin z dostępnymi terminami!</p>
+            </div>
+        </main>
+
+        <footer class="bg-zinc-900.80 py-12">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4">NA SKRÓTY</h3>
+                    <ul class="space-y-2 text-center">
+                        <li><a href="index.html" class="text-zinc-400 hover:text-zinc-300">Strona Główna</a></li>
+                        <li><a href="portfolio.html" class="text-zinc-400 hover:text-zinc-300">Portfolio</a></li>
+                        <li><a href="uslugi.html" class="text-zinc-400 hover:text-zinc-300">Usługi</a></li>
+                        <li><a href="omnie.html" class="text-zinc-400 hover:text-zinc-300">O mnie</a></li>
+                        <li><a href="contact.html" class="text-zinc-400 hover:text-zinc-300">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mb-4">SOCIAL MEDIA</h3>
+                    <ul class="space-y-2 text-center">
+                        <li><a href="https://instagram.com/wavvocean/" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-centerspace-x-2"><i class="fa-brands fa-instagram"></i><span> Instagram</span></a></li>
+                        <li><a href="https://www.youtube.com/@wavvocean" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a></li>
+                        <li><a href="https://www.youtube.com/@wavvoceanbeat" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-youtube"></i><span>Type Beats</span></a></li>
+                        <li><a href="https://open.spotify.com/artist/1xqy52NW8VhneLK97zHt2A?si=TESNe_-ESuWcagUrwVIXsg" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-spotify"></i><span>Spotify</span></a></li>
+                        <li><a href="https://music.apple.com/us/artist/wavvocean/1598320228" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-apple"></i><span>Apple Music</span></a></li>
+                        <li><a href="https://x.com/wavvocean" class="text-zinc-400 hover:text-zinc-300 flex items-center justify-center space-x-2"><i class="fa-brands fa-x-twitter"></i><span>X/Twitter</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-8 text-zinc-400">
+                <p>© 2025 <i>wavvocean</i>. Wszelkie prawa zastrzeżone</p>
+            </div>
+        </footer>
+        <script>
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const closeBtn = document.getElementById('close-btn');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            hamburgerBtn.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('active');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                dropdownMenu.classList.remove('active');
+            });
+
+            dropdownMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('active');
+                });
+            });
+        </script>
+    </body>
+</html>
